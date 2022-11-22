@@ -14,7 +14,6 @@
 }
 
 .profile__title-wrapper {
-  align-items: flex-start;
   max-width: 240px;
   display: flex;
   flex-flow: row wrap;
