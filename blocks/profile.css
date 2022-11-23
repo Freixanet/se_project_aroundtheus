@@ -37,8 +37,9 @@
   box-sizing: border-box;
   width: 18px;
   height: 18px;
-  background: none;
   border: none;
+  background: url(../images/edit-button.svg);
+  background-size: cover;
 }
 
 .profile__edit-button:hover {
