@@ -30,10 +30,15 @@
 }
 
 .profile__edit-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   cursor: pointer;
   box-sizing: border-box;
   width: 18px;
   height: 18px;
+  background: none;
+  border: none;
 }
 
 .profile__edit-button:hover {

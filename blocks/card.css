@@ -11,10 +11,6 @@
   font-family: "Inter", arial, sans-serif;
 }
 
-.card:last-child {
-  margin-bottom: 0;
-}
-
 .card__image {
   width: 100%;
   height: 282px;
@@ -41,12 +37,17 @@
 }
 
 .card__like-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   width: 21px;
   height: 18px;
   cursor: pointer;
+  background: none;
+  border: none;
 }
 
-.card__like-button:hover {
+.card__like-button-icon:hover {
   color: #ffffff;
   opacity: 0.6;
 }
