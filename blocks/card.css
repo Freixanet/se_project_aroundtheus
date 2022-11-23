@@ -43,11 +43,11 @@
   width: 21px;
   height: 18px;
   cursor: pointer;
-  background: none;
+  background: url(../images/Vector7.svg);
   border: none;
 }
 
-.card__like-button-icon:hover {
+.card__like-button:hover {
   color: #ffffff;
   opacity: 0.6;
 }
