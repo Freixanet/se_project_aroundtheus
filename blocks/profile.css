@@ -39,7 +39,7 @@
   height: 18px;
   border: none;
   background: url(../images/edit-button.svg);
-  background-size: cover;
+  background-size: contain;
 }
 
 .profile__edit-button:hover {
