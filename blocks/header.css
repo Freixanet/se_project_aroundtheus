@@ -1,5 +1,5 @@
 .header {
-  height: 56px;
+  min-height: 56px;
   padding-top: 28px;
   border-bottom: 1px solid;
   border-color: rgba(84, 84, 84, 0.7);
@@ -7,7 +7,8 @@
 
 @media screen and (min-width: 768px) {
   .header {
-    height: 74px;
+    padding-top: 45px;
+    min-height: 74px;
     width: 100%;
     margin: 0 auto;
   }
@@ -15,8 +16,6 @@
 
 @media screen and (min-width: 1280px) {
   .header {
-    height: 74px;
     max-width: 880px;
-    margin: 0 auto;
   }
 }
