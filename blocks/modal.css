@@ -1,0 +1,103 @@
+.modal {
+  position: fixed;
+  display: none;
+  flex-direction: column;
+  background-color: rgba(0, 0, 0, 0.5);
+  min-width: 100%;
+  min-height: 100vh;
+}
+
+.modal_opened {
+  display: flex;
+}
+
+.modal__container {
+  padding-top: 25px;
+  position: relative;
+  background-color: white;
+  height: 322px;
+  width: 282px;
+  margin: auto;
+  border-radius: 10px;
+  border: none;
+}
+
+.modal__close-button {
+  position: absolute;
+  cursor: pointer;
+  background-color: transparent;
+  border: none;
+  right: 0;
+  top: -40px;
+  cursor: pointer;
+  background-image: url(../images/close-icon.svg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  height: 26px;
+  width: 26px;
+}
+
+.modal__close-button:hover {
+  opacity: 0.6;
+}
+
+.modal__title {
+  font-family: "Inter", arial, sans-serif;
+  font-weight: 900;
+  color: black;
+  line-height: 1.2;
+  font-size: 18px;
+  margin: 0 0 75px 22px;
+}
+
+.modal__form {
+  display: flex;
+  flex-direction: column;
+  row-gap: 30px;
+}
+
+.modal__fieldset {
+  border: none;
+  padding: 0;
+  margin: 0;
+  height: 27px;
+}
+
+.modal__input {
+  display: block;
+  border: none;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+  font-family: "Inter", arial, sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 1.2;
+  color: black;
+  width: 238px;
+  margin: 0 auto;
+  height: 27px;
+  padding: 0 0 0 4px;
+}
+
+.modal__input::placeholder {
+  height: 100%;
+}
+
+.modal__save-button {
+  background-color: black;
+  cursor: pointer;
+  color: white;
+  font-family: "Inter", arial, sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 1.2;
+  width: 238px;
+  height: 46px;
+  margin: 45px 20px 0 20px;
+  border: none;
+  border-radius: 2px;
+}
+
+.modal__save-button:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+}
