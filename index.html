@@ -27,105 +27,51 @@
           </div>
           <button class="profile__button" type="button"></button>
         </section>
-        <section class="places">
-          <div class="card">
-            <img
-              class="card__image"
-              src="./images/yosemite-valley.jpg"
-              alt="Yosemite Valley image"
-            />
-            <div class="card__title-wrapper">
-              <h2 class="card__title">Yosemite Valley</h2>
-              <button class="card__like-button" type="button"></button>
-            </div>
-          </div>
-          <div class="card">
-            <img
-              class="card__image"
-              src="./images/lake-louise.jpg"
-              alt="Lake Louise image"
-            />
-            <div class="card__title-wrapper">
-              <h2 class="card__title">Lake Louise</h2>
-              <button class="card__like-button" type="button"></button>
-            </div>
-          </div>
-          <div class="card">
-            <img
-              class="card__image"
-              src="./images/bald-mountains.jpg"
-              alt="Bald Mountains image"
-            />
-            <div class="card__title-wrapper">
-              <h2 class="card__title">Bald Mountains</h2>
-              <button class="card__like-button" type="button"></button>
-            </div>
-          </div>
-          <div class="card">
-            <img
-              class="card__image"
-              src="./images/latemar.jpg"
-              alt="Latemar image"
-            />
-            <div class="card__title-wrapper">
-              <h2 class="card__title">Latemar</h2>
-              <button class="card__like-button" type="button"></button>
-            </div>
-          </div>
-          <div class="card">
-            <img
-              class="card__image"
-              src="./images/vanoise-national-park.jpg"
-              alt="Vanoise National Park image"
-            />
-            <div class="card__title-wrapper">
-              <h2 class="card__title">Vanoise National Park</h2>
-              <button class="card__like-button" type="button"></button>
-            </div>
-          </div>
-          <div class="card">
-            <img
-              class="card__image"
-              src="./images/lago-di-braies.jpg"
-              alt="Lago di Braies image"
-            />
-            <div class="card__title-wrapper">
-              <h2 class="card__title">Lago di Braies</h2>
-              <button class="card__like-button" type="button"></button>
-            </div>
-          </div>
-        </section>
+        <section class="places"></section>
       </main>
       <footer class="footer">
         <p class="footer__copyright">© 2022 Around The U.S.</p>
       </footer>
       <!-- MODAL -->
-      <div class="modal modal_opened">
-        <div class="modal__container">
+      <div class="modal">
+        <div class="modal__content">
           <button class="modal__close-button"></button>
           <h2 class="modal__title">Edit Profile</h2>
           <form action="text" class="modal__form">
-            <fieldset class="modal__fieldset">
-              <input
-                type="text"
-                placeholder="Name"
-                class="modal__input"
-                required
-              />
-            </fieldset>
-            <fieldset class="modal__fieldset">
-              <input
-                type="text"
-                placeholder="Description"
-                class="modal__input"
-              />
-            </fieldset>
+            <div class="modal__fieldset-wrapper">
+              <fieldset class="modal__fieldset">
+                <input
+                  type="text"
+                  placeholder="Name"
+                  class="modal__input modal__input-name"
+                  required
+                />
+              </fieldset>
+              <fieldset class="modal__fieldset">
+                <input
+                  type="text"
+                  placeholder="Description"
+                  class="modal__input modal__input-description"
+                  required
+                />
+              </fieldset>
+            </div>
+            <button type="submit" class="modal__save-button">Save</button>
           </form>
-          <button class="modal__save-button">Save</button>
         </div>
       </div>
       <!-- MODAL -->
     </div>
+    <!-- TEMPLATE -->
+    <template id="card-template">
+      <div class="card">
+        <div class="card__image"></div>
+        <div class="card__title-wrapper">
+          <h2 class="card__title"></h2>
+          <button class="card__like-button" type="button"></button>
+        </div>
+      </div>
+    </template>
 
     <script src="./scripts/index.js"></script>
   </body>

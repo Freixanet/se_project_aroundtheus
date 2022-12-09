@@ -1,7 +1,9 @@
-let initialCards = [
+// DECLARATIONS
+
+const initialCards = [
   {
     name: "Yosemite Valley",
-    link: "../images/yosemite.valley.jpg",
+    link: "../images/yosemite-valley.jpg",
   },
   {
     name: "Lake Louise",
@@ -25,10 +27,23 @@ let initialCards = [
   },
 ];
 
-let editButton = document.querySelector(".profile__edit-button");
-let closeButton = document.querySelector(".modal__close-button");
-let modal = document.querySelector(".modal");
+// Modals
+const modal = document.querySelector(".modal");
+const profileFormElement = document.querySelector(".modal__form");
+const nameInput = document.querySelector(".modal__input-name");
+const jobInput = document.querySelector(".modal__input-description");
 
+// Buttons and other DOM elements
+const editButton = document.querySelector(".profile__edit-button");
+const closeButton = document.querySelector(".modal__close-button");
+const submitButton = document.querySelector(".modal__save-button");
+const profileName = document.querySelector(".profile__title");
+const profileJob = document.querySelector(".profile__text");
+
+// Wrappers
+const placesList = document.querySelector(".places");
+
+// Functions
 function openModal() {
   modal.classList.add("modal_opened");
 }
@@ -37,5 +52,32 @@ function closeModal() {
   modal.classList.remove("modal_opened");
 }
 
+function handleProfileFormSubmit(evt) {
+  evt.preventDefault();
+  profileName.textContent = nameInput.value;
+  profileJob.textContent = jobInput.value;
+  closeModal();
+}
+
+function createCardelements(card) {
+  const cardTemplate = document
+    .querySelector("#card-template")
+    .content.querySelector(".card");
+  const cardElement = cardTemplate.cloneNode(true);
+  const cardImage = cardElement.querySelector(".card__image");
+  const cardTitle = cardElement.querySelector(".card__title");
+  cardImage.style.backgroundImage = `url(${card.link})`;
+  cardTitle.textContent = card.name;
+  return cardElement;
+}
+
+function renderCard(card, wrapper) {
+  wrapper.append(createCardelements(card));
+}
+
+// Event handlers
 editButton.addEventListener("click", openModal);
 closeButton.addEventListener("click", closeModal);
+profileFormElement.addEventListener("submit", handleProfileFormSubmit);
+
+initialCards.forEach((card) => renderCard(card, placesList));
