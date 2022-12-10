@@ -69,7 +69,7 @@ function openEditProfileModal() {
   openModal();
 }
 
-function createCardElements(card) {
+function createCardElement(card) {
   const cardTemplate = document
     .querySelector("#card-template")
     .content.querySelector(".card");
@@ -82,11 +82,10 @@ function createCardElements(card) {
 }
 
 function renderCard(card, wrapper) {
-  wrapper.append(createCardElements(card));
+  wrapper.append(createCardElement(card));
 }
 
 // Event handlers
-editButton.addEventListener("click", openModal);
 editButton.addEventListener("click", openEditProfileModal);
 closeButton.addEventListener("click", closeModal);
 profileFormElement.addEventListener("submit", handleProfileFormSubmit);
