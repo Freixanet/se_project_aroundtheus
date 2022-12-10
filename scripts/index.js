@@ -59,7 +59,17 @@ function handleProfileFormSubmit(evt) {
   closeModal();
 }
 
-function createCardelements(card) {
+function fillProfileForm() {
+  nameInput.value = profileName.textContent;
+  jobInput.value = profileJob.textContent;
+}
+
+function openEditProfileModal() {
+  fillProfileForm();
+  openModal();
+}
+
+function createCardElements(card) {
   const cardTemplate = document
     .querySelector("#card-template")
     .content.querySelector(".card");
@@ -72,11 +82,12 @@ function createCardelements(card) {
 }
 
 function renderCard(card, wrapper) {
-  wrapper.append(createCardelements(card));
+  wrapper.append(createCardElements(card));
 }
 
 // Event handlers
 editButton.addEventListener("click", openModal);
+editButton.addEventListener("click", openEditProfileModal);
 closeButton.addEventListener("click", closeModal);
 profileFormElement.addEventListener("submit", handleProfileFormSubmit);
 
