@@ -40,7 +40,7 @@ class FormValidator {
     return this._inputList.every((inputElement) => inputElement.validity.valid);
   }
 
-  _toggleButtonState = () => {
+  toggleButtonState = () => {
     const isValid = this._checkFormValidity();
 
     if (isValid) {
@@ -62,7 +62,7 @@ class FormValidator {
 
     inputElements.forEach((inputElement) => {
       inputElement.addEventListener("input", () => {
-        this.checkInputValidity(inputElement);
+        this._checkInputValidity;
         this.toggleButtonState();
       });
     });
@@ -84,26 +84,7 @@ class FormValidator {
   }
 }
 
-const settings = {
-  formSelector: ".popup__form", // Selector for the form element
-  inputSelector: ".popup__input", // Selector for the input fields within the form
-  submitButtonSelector: ".popup__button", // Selector for the submit button within the form
-  inactiveButtonClass: "popup__button_disabled", // Class to apply to the submit button when it's inactive
-  inputErrorClass: "popup__input_type_error", // Class to apply to input fields with errors
-  errorClass: "popup__error_visible", // Class to apply to error messages for input fields
-};
-
-// Enable validation for the Profile Edit Popup Form
-profileEditFormValidator.enableValidation();
-
-// Create an instance of the FormValidator class for the Add Card Popup Form
-const addCardFormElement = document.querySelector("#add-card-popup"); // Select the form element
-const addCardFormValidator = new FormValidator(
-  formValidatorSettings,
-  addCardFormElement
-);
-
 // Enable validation for the Add Card Popup Form
 addCardFormValidator.enableValidation();
 
-export { FormValidator, formValidatorSettings };
+export { FormValidator };

@@ -1,7 +1,35 @@
 // Import your Card class and other dependencies here
-import Card from "/components/Card.js";
-import FormValidator from "/components/FormValidator.js"; // Import the FormValidator class
-import { formValidatorSettings } from "/components/FormValidator.js"; // Import the settings object
+import Card from "./components/Card.js";
+import FormValidator from "./components/FormValidator.js"; // Import the FormValidator class
+import { Settings as formValidatorSettings } from "./components/FormValidator.js"; // Import the settings object
+import { handleCardFormSubmission } from "./Card.js";
+
+const initialCards = [
+  {
+    name: "Yosemite Valley",
+    link: "https://practicum-content.s3.us-west-1.amazonaws.com/software-engineer/around-project/yosemite.jpg",
+  },
+  {
+    name: "Lake Louise",
+    link: "https://practicum-content.s3.us-west-1.amazonaws.com/software-engineer/around-project/lake-louise.jpg",
+  },
+  {
+    name: "Bald Mountains",
+    link: "https://practicum-content.s3.us-west-1.amazonaws.com/software-engineer/around-project/bald-mountains.jpg",
+  },
+  {
+    name: "Latemar",
+    link: "https://practicum-content.s3.us-west-1.amazonaws.com/software-engineer/around-project/latemar.jpg",
+  },
+  {
+    name: "Vanoise National Park",
+    link: "https://practicum-content.s3.us-west-1.amazonaws.com/software-engineer/around-project/vanoise.jpg",
+  },
+  {
+    name: "Lago di Braies",
+    link: "https://practicum-content.s3.us-west-1.amazonaws.com/software-engineer/around-project/lago.jpg",
+  },
+];
 
 // Elements
 const popups = document.querySelectorAll(".popup");
@@ -80,10 +108,6 @@ function handleProfileEditSubmit(e) {
 
 function handleAddCardSubmit(e) {
   e.preventDefault();
-
-  // Get the validation status of the form
-  const isValid = addCardFormValidator.checkFormValidity();
-
   if (isValid) {
     const name = cardTitleInput.value;
     const link = cardImageInput.value;
