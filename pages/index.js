@@ -1,3 +1,9 @@
+// Import your Card class and other dependencies here
+import Card from "/components/Card.js";
+import FormValidator from "/components/FormValidator.js"; // Import the FormValidator class
+import { Settings as formValidatorSettings } from "/components/FormValidator.js"; // Import the settings object
+import { handleCardFormSubmission } from "./Card.js";
+
 const initialCards = [
   {
     name: "Yosemite Valley",
@@ -141,7 +147,13 @@ function handleAddCardSubmit(e) {
   closePopup(addCardPopup);
 
   addCardForm.reset();
+
+  // Add an event listener for card form submission after a card is added
+  addCardForm.removeEventListener("submit", handleCardFormSubmission); // Remove existing listener
+  addCardForm.addEventListener("submit", handleCardFormSubmission); // Add new listener
 }
+
+function handleImageClick(cardData) {}
 
 // Event Listeners
 
