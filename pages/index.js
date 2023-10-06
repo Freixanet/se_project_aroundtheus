@@ -1,5 +1,5 @@
 // Import your Card class and other dependencies here
-import Card from "./components/Card.js";
+import Card from "../components/Card.js";
 import FormValidator from "./components/FormValidator.js"; // Import the FormValidator class
 import { Settings as formValidatorSettings } from "./components/FormValidator.js"; // Import the settings object
 import { handleCardFormSubmission } from "./Card.js";

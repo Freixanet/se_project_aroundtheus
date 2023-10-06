@@ -53,7 +53,7 @@ class Card {
 
   _handleDeleteClick() {
     // Handle the delete button click event
-    cardElement.remove();
+    this._element.remove();
   }
 }
 
