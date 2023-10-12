@@ -5,13 +5,19 @@
 - Intro
 - Figma
 - Images
-- Github
+- Techniques
 
 **Intro**
 
-This is the third project at Software Egineering program at Practicum. It was to practice making responsive webpage based off figma design layouts as previewed below.
+This project is made so all the elements are displayed correctly on popular screen sizes. We recommend investing more time in completing this project, since it's more difficult than previous ones.
 
-This project was followed by BEM structure with the media queries and the responsive design layouts using HTML and CSS.
+**Techniques**
+
+- max width to ensure design is reponsive at different screensizes.
+- Grid display
+- media quieries
+- responsive from 1280 - 320 screen sizes
+- focus on most popular sizes
 
 **Figma**
 
@@ -19,13 +25,9 @@ This project was followed by BEM structure with the media queries and the respon
 
 **Images**
 
-This the product design layout for the project.
+The way you'll do this at work is by exporting images directly from Figma — we recommend doing that to practice more. Don't forget to optimize them [here](https://tinypng.com/), so your project loads faster.
 
-![alt text](<./images/MAIN%20PAGE%20(1).png>)
+Good luck and have fun!
 
-**Github**
-
-- [Link to the project on Github](https://github.com/almamamia/se_project_aroundtheus)
-- [Deployed page link] (https://almamamia.github.io/se_project_aroundtheus/)
-
-THANK YOU SO MUCH FOR such a detailed feedback! I was struggling on why form.resst wasn't working properly but adding eventlistener on "reset" really helped. Hopefully I didn't miss any comments but lmk if I did. Thanks agian!
+**link to Github**
+https://marcelluki.github.io/se_project_aroundtheus/
