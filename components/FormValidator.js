@@ -56,13 +56,13 @@ class FormValidator {
     this._inputList.forEach((inputElement) => {
       inputElement.addEventListener("input", () => {
         this._checkInputValidity(inputElement);
-        this._toggleButtonState();
+        this.toggleButtonState;
       });
     });
 
     inputElements.forEach((inputElement) => {
       inputElement.addEventListener("input", () => {
-        this._checkInputValidity;
+        this._checkInputValidity();
         this.toggleButtonState();
       });
     });
@@ -80,11 +80,8 @@ class FormValidator {
     this._inputList.forEach((inputElement) => {
       this._hideInputError(inputElement);
     });
-    this.toggleButtonState;
+    this.toggleButtonState();
   }
 }
-
-// Enable validation for the Add Card Popup Form
-addCardFormValidator.enableValidation();
 
 export { FormValidator };
