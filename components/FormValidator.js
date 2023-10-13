@@ -36,13 +36,12 @@ export default class FormValidator {
     return !inputList.every((inputEl) => inputEl.validity.valid);
   }
 
-  _checkInputValidity() {
-    this._inputEls.forEach((inputEl) => {
-      if (!inputEl.validity.valid) {
-        return this._showInputError(inputEl);
-      }
+  _checkInputValidity(inputEl) {
+    if (inputEl.validity.valid) {
       this._hideInputError(inputEl);
-    });
+    } else {
+      this._showInputError(inputEl);
+    }
   }
 
   _setEventListeners() {
