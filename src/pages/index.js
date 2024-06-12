@@ -1,4 +1,4 @@
-import "./index.css";
+import "../pages/index.css";
 import avatarSrc from "../images/jacques-cousteau.jpg";
 
 const avatarImage = document.getElementsByClassName("profile-image");
