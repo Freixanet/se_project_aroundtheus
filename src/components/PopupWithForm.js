@@ -1,32 +1,44 @@
 import Popup from "./Popup.js";
 
 export default class PopupWithForm extends Popup {
-  constructor({ popupSelector, handleFormSubmit }) {
+  constructor(popupSelector, handleFormSubmit) {
     super({ popupSelector });
+    this._popupForm = this._popupElement.querySelector(".modal__form");
+    this._submitButton = this._popupElement.querySelector(".form__button");
+    this._formInputs = this._popupForm.querySelectorAll("input");
     this._handleFormSubmit = handleFormSubmit;
-    this._form = this._popupElement.querySelector(".modal__form");
-    this._inputList = this._form.querySelectorAll(".modal__input");
   }
 
+  // Collects data from all the input fields and returns the data as an object
   _getInputValues() {
-    this._inputValues = {};
-    this._inputList.forEach((input) => {
-      this._inputValues[input.name] = input.value;
+    // Make a input data object
+    const inputObject = {};
+
+    // Name each input by its value
+    this._formInputs.forEach((input) => {
+      inputObject[input.name] = input.value;
     });
-    return this._inputValues;
+
+    // Return the data as an object
+    return inputObject;
   }
 
   setEventListeners() {
+    // Add the 'click' event listener to the close icon
     super.setEventListeners();
-    this._form.addEventListener("submit", (event) => {
+
+    // Add the 'submit' event handler to the form
+    this._popupForm.addEventListener("submit", (event) => {
       event.preventDefault();
       this._handleFormSubmit(this._getInputValues());
-      this.close();
     });
   }
 
   close() {
-    this._form.reset();
+    // Reset the form
+    this._popupForm.reset();
+
+    // Close the form
     super.close();
   }
 }

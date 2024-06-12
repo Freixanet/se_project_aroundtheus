@@ -1,40 +1,70 @@
+// Import images for webpack to add the correct paths to the variables
+const lagoDiBraiesImage = new URL(
+  "../images/lago-di-braies.jpg",
+  import.meta.url
+);
+const vanoiseNationalParkImage = new URL(
+  "../images/vanoise-national-park.jpg",
+  import.meta.url
+);
+const lakeLouiseImage = new URL("../images/lake-louise.jpg", import.meta.url);
+const latemarImage = new URL("../images/latemar.jpg", import.meta.url);
+const baldMountainsImage = new URL(
+  "../images/bald-mountains.jpg",
+  import.meta.url
+);
+const yosemiteValleyImage = new URL(
+  "../images/yosemite-valley.jpg",
+  import.meta.url
+);
+
+// Create an initial list of cards
 export const initialCards = [
   {
-    name: "Yosemite Valley",
-    link: "https://practicum-content.s3.us-west-1.amazonaws.com/software-engineer/around-project/yosemite.jpg",
+    name: "Lago di Braies",
+    link: lagoDiBraiesImage,
   },
-
-  {
-    name: "Lake Louise",
-    link: "https://practicum-content.s3.us-west-1.amazonaws.com/software-engineer/around-project/lake-louise.jpg",
-  },
-
-  {
-    name: "Bald Mountains",
-    link: "https://practicum-content.s3.us-west-1.amazonaws.com/software-engineer/around-project/bald-mountains.jpg",
-  },
-
-  {
-    name: "Latemar",
-    link: "https://practicum-content.s3.us-west-1.amazonaws.com/software-engineer/around-project/latemar.jpg",
-  },
-
   {
     name: "Vanoise National Park",
-    link: "https://practicum-content.s3.us-west-1.amazonaws.com/software-engineer/around-project/vanoise.jpg",
+    link: vanoiseNationalParkImage,
   },
-
   {
-    name: "Lago di Braies",
-    link: "https://practicum-content.s3.us-west-1.amazonaws.com/software-engineer/around-project/lago.jpg",
+    name: "Lake Louise",
+    link: lakeLouiseImage,
+  },
+  {
+    name: "Latemar",
+    link: latemarImage,
+  },
+  {
+    name: "Bald Mountains",
+    link: baldMountainsImage,
+  },
+  {
+    name: "Yosemite Valley",
+    link: yosemiteValleyImage,
   },
 ];
 
-export const settings = {
-  formSelector: ".modal__form",
-  inputSelector: ".modal__input",
-  submitButtonSelector: ".modal__button",
-  inactiveButtonClass: "modal__button_disabled",
-  inputErrorClass: "modal__input_type_error",
-  errorClass: "modal__error_visible",
+export const selectors = {
+  cardsList: ".cards__list",
+  cardTemplate: "#card-element",
+  previewPopup: "#image-modal",
+  editFormPopup: "#edit-modal",
+  addFormPopup: "#add-modal",
+  profileName: ".profile__name",
+  profileProfession: ".profile__profession",
+  formModalContainer: ".modal__container",
+  imageModalContainer: ".modal__popup",
+  formInputName: "#name",
+  formInputProfession: "#profession",
+};
+
+export const validationSettings = {
+  inputSelector: ".form__input",
+  submitButtonSelector: ".form__button",
+  inactiveButtonClass: "form__button_disabled",
+  inputErrorClass: "form__input_type_error",
+  errorClass: "form__error_visible",
+  formSelector: "form",
 };

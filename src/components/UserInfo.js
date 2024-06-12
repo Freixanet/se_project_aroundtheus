@@ -1,17 +1,20 @@
 export default class UserInfo {
-  constructor({ nameSelector, jobSelector }) {
-    this._nameElement = document.querySelector(nameSelector);
-    this._jobElement = document.querySelector(jobSelector);
+  constructor(nameSelector, professionSelector) {
+    this._name = document.querySelector(nameSelector);
+    this._profession = document.querySelector(professionSelector);
   }
+
+  // Retrieve profile info from the page
   getUserInfo() {
     return {
-      name: this._nameElement.textContent,
-      job: this._jobElement.textContent,
+      name: this._name.textContent,
+      profession: this._profession.textContent,
     };
   }
 
-  setUserInfo({ name, job }) {
-    this._nameElement.textContent = name;
-    this._jobElement.textContent = job;
+  // Add new profile info to the page
+  setUserInfo(name, profession) {
+    this._name.textContent = name;
+    this._profession.textContent = profession;
   }
 }
