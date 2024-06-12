@@ -1,7 +1,7 @@
 import "./index.css";
 import avatarSrc from "../images/jacques-cousteau.jpg";
 
-const avatarImage = document.getElementById("Avatar-image");
+const avatarImage = document.getElementsByClassName("profile-image");
 avatarImage.src = avatarSrc;
 
 import FormValidator from "../components/FormValidator.js";
@@ -19,15 +19,15 @@ const profileNameInput = document.querySelector("#profile-name-input");
 const profileDescriptionInput = document.querySelector(
   "#profile-description-input"
 );
-const profileEditForm = document.querySelector("#edit-profile-form");
+const profileEditForm = document.querySelector("#profile__edit-modal");
 
 // Elements: Add Card Modal
 const addNewCardButton = document.querySelector(".profile__add-button");
-const cardForm = document.querySelector("#add-card-form");
+const cardForm = document.querySelector("#add__card-form");
 
 // Elements: Image Preview Modal
 const imagePreviewModal = new PopupWithImage({
-  popupSelector: "#image-preview-modal",
+  popupSelector: "#preview__image-modal",
 });
 
 // Elements: Form Validators
@@ -41,14 +41,14 @@ const toggleAddButtonState = () => addFormValidator.toggleButtonState();
 
 // Initialize Modals
 const editProfileModal = new PopupWithForm({
-  popupSelector: "#edit-profile-modal",
+  popupSelector: "#profile__edit-modal",
   handleFormSubmit: (data) => {
     userInfo.setUserInfo({ name: data.name, job: data.job });
   },
 });
 
 const addCardModal = new PopupWithForm({
-  popupSelector: "#add-card-modal",
+  popupSelector: "#card__add-modal",
   handleFormSubmit: (data) => {
     const cardElement = createCard({ name: data.title, link: data.url });
     section.addItem(cardElement);
